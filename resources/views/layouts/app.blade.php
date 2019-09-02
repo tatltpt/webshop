@@ -16,7 +16,7 @@
     <!-- Favicon
     ============================================ -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('img/favicon.ico')}}">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Fonts
     ============================================ -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -92,6 +92,18 @@
 <!-- header area start -->
 @include('components.header')
 <!-- header area end -->
+@if(\Session::has('success'))
+    <div class="alert alert-success alert-dismissible" style="position: fixed;top: 20px">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Thành công! </strong>{{\Session::get('success')}}
+    </div>
+@endif
+@if(\Session::has('danger'))
+    <div class="alert alert-danger alert-dismissible" style="position: fixed;right: 20px">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Thất bại! </strong>{{\Session::get('danger')}}
+    </div>
+@endif
 @yield('content')
 <!-- FOOTER START -->
 @include('components.footer')
@@ -147,5 +159,6 @@
 <!-- main js
 ============================================ -->
 <script src="{{asset('js/main.js')}}"></script>
+@yield('script')
 </body>
 </html>

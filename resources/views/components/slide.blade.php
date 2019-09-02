@@ -16,12 +16,7 @@
         <div id="slider-direction-2" class="slider-direction">
             <div class="slider-progress"></div>
             <div class="slider-content t-lfl s-tb slider-2 lft-pr">
-                <div class="title-container s-tb-c">
-                    <h2 class="title1">minimal bags</h2>
-                    <h3 class="title2" >collection</h3>
-                    <h4 class="title2" >Simple is the best.</h4>
-                    <a class="btn-title" href="">View collection</a>
-                </div>
+
             </div>
         </div>
     </div>

@@ -50,14 +50,27 @@
                             <a href="{{route('admin.home')}}">Trang Tổng Quan </a></li>
                         <li class="{{ \Request::route()->getName() == 'admin.get.list.category' ? 'active' : ''}}"><a href="{{route('admin.get.list.category')}}">Danh mục</a></li>
                         <li class="{{ \Request::route()->getName() == 'admin.get.list.product' ? 'active' : ''}}"><a href="{{route('admin.get.list.product')}}">Sản phẩm</a></li>
+                        <li class="{{ \Request::route()->getName() == 'admin.get.list.rating' ? 'active' : ''}}"><a href="{{route('admin.get.list.rating')}}">Đánh giá</a></li>
                         <li class="{{ \Request::route()->getName() == 'admin.get.list.article' ? 'active' : ''}}"><a href="{{route('admin.get.list.article')}}">Tin tức</a></li>
-{{--                        <li class="{{ \Request::route()->getName() == 'admin.get.list.transaction' ? 'active' : ''}}"><a href="{{route('admin.get.list.transaction')}}">Đơn hàng</a></li>--}}
+                        <li class="{{ \Request::route()->getName() == 'admin.get.list.transaction' ? 'active' : ''}}"><a href="{{route('admin.get.list.transaction')}}">Đơn hàng</a></li>
                         <li class="{{ \Request::route()->getName() == 'admin.get.list.user' ? 'active' : ''}}"><a href="{{route('admin.get.list.user')}}">Thành viên</a></li>
+                        <li class="{{ \Request::route()->getName() == 'admin.get.list.contact' ? 'active' : ''}}"><a href="{{route('admin.get.list.contact')}}">Liên hệ</a></li>
                     </ul>
 
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
+                        @if(\Session::has('success'))
+                            <div class="alert alert-success alert-dismissible" style="position: fixed;right: 20px">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Thành công! </strong>{{\Session::get('success')}}
+                            </div>
+                        @endif
+                        @if(\Session::has('danger'))
+                            <div class="alert alert-danger alert-dismissible" style="position: fixed;right: 20px">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Thất bại! </strong>{{\Session::get('danger')}}
+                            </div>
+                        @endif
                     @yield('content')
 
                 </div>

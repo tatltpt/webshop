@@ -53,7 +53,7 @@ class AdminArticleController extends Controller
         $article = new Article();
         if ($id) $article = Article::find($id);
         $article->a_name = $requestArticle->a_name;
-        $article->a_slug = str_slug($requestArticle->a_slug);
+        $article->a_slug = str_slug($requestArticle->a_name);
         $article->a_description = $requestArticle->a_description;
         $article->a_content = $requestArticle->a_content;
         $article->a_title_seo = $requestArticle->a_title_seo ? $requestArticle->a_title_seo : $requestArticle->a_name;
@@ -81,6 +81,10 @@ class AdminArticleController extends Controller
                     break;
                 case 'active':
                     $article->a_active = $article->a_active ? 0 : 1;
+                    $article->save();
+                    break;
+                case 'hot':
+                    $article->a_hot = $article->a_hot ? 0 : 1;
                     $article->save();
                     break;
 

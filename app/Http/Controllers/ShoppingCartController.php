@@ -34,7 +34,7 @@ class ShoppingCartController extends Controller
                  'pro_old' => $product->pro_price
              ],
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('success','Thêm vào giỏ hàng thành công');
     }
 
     public function deleteProductItem($key)

@@ -26,6 +26,7 @@ Route::get('san-pham/{slug}-{id}','ProductDetailController@productDetail')->name
 
 //bai viet
 Route::get('bai-viet','ArticleController@getListArticle')->name('get.list.article');
+Route::get('bai-viet/{slug}-{id}','ArticleController@getDetailArticle')->name('get.detail.article');
 
 
 Route::prefix('shopping')->group(function(){
@@ -40,6 +41,11 @@ Route::group(['prefix'=>'gio-hang','middleware'=>'CheckLoginUser'],function(){
 
 });
 
+Route::group(['prefix'=>'ajax','middleware'=>'CheckLoginUser'],function(){
+    Route::post('/danh-gia/{id}','RatingController@saveRating')->name('post.rating.product');
+});
+
 Route::get('lien-he','ContactController@getContact')->name('get.contact');
 Route::post('lien-he','ContactController@saveContact');
 
+Route::get('ve-chung-toi','PageStaticController@aboutUs')->name('get.about_us');

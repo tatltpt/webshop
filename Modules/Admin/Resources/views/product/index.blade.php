@@ -1,5 +1,8 @@
 @extends('admin::layouts.master')
 @section('content')
+    <style>
+        .rating .active { color: #ff9705 !important}
+    </style>
 		<div class="page-header">
 			<ol class="breadcrumb">
  				<li><a href="#">Trang chủ</a></li>
@@ -45,6 +48,13 @@
                             <tbody>
                             @if ( isset($products))
                                 @foreach($products as $product)
+                                    <?php
+                                        $age = 0;
+                                        if($product->pro_total_rating)
+                                            {
+                                                $age = round($product->pro_total_number / $product->pro_total_rating,2);
+                                            }
+                                    ?>
                                     <tr>
                                         <td>{{$product->id}}</td>
                                         <td>
@@ -52,6 +62,14 @@
                                             <ul style="padding-left: 16px;">
                                                 <li><span><i class="fas fa-dollar-sign"></i></span><span> {{number_format($product->pro_price,0,',','.')}}đ</span></li>
                                                 <li><span><i class="fas fa-dollar-sign"></i></span><span> {{number_format($product->pro_sale,0,',','.')}}(%)</span></li>
+                                                <li><span>Đánh giá : </span>
+                                                    <span class="rating">
+                                                        @for($i = 1;$i<=5;$i++)
+                                                            <i class="fa fa-star {{$i <= $age ? 'active' : ''}}" style="color: #999"></i>
+                                                        @endfor
+                                                    </span>
+                                                    <span>{{$age}}</span>
+                                                </li>
                                             </ul>
                                         </td>
                                         <td>{{isset($product->category->c_name) ? $product->category->c_name : '[N\A]'}}</td>

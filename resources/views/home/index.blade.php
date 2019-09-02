@@ -31,6 +31,12 @@
                                     <div class="single-product first-sale">
 
                                         <div class="product-img">
+{{--                                            @if($hot->pro_number==0)--}}
+{{--                                                <span>Tạm hết hàng</span>--}}
+{{--                                            @endif--}}
+{{--                                            @if($hot->pro_sale)--}}
+{{--                                                <span>{{$hot->pro_sale}}%</span>--}}
+{{--                                            @endif--}}
                                             <a href="{{route('get.detail.product',[$hot->pro_slug,$hot->id])}}">
                                                 <img class="primary-image" src="{{pare_url_file($hot->pro_avatar)}}" alt="" style="width: 243px;height: 252px"/>
                                                 <img class="secondary-image" src="{{pare_url_file($hot->pro_avatar)}}" alt="" style="width: 243px;height: 252px"/>

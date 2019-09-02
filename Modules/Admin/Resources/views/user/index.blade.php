@@ -30,7 +30,7 @@
                         <td>{{$user->email}}</td>
                         <td>{{$user->phone}}</td>
                         <td>
-                            <img src="{{ pare_url_file($user->pro_avatar) }}" alt="" class="img img-responsive" style="width: 80px;height: 80px;" >
+                            <img src="{{ pare_url_file($user->_avatar) }}" alt="" class="img img-responsive" style="width: 80px;height: 80px;" >
                         </td>
 
                         <td>

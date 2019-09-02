@@ -6,58 +6,41 @@
                 <div class="col-md-3 col-sm-4">
                     <div class="single-snap-footer">
                         <div class="snap-footer-title">
-                            <h4>Company info</h4>
+                            <h4>Thông tin cửa hàng</h4>
                         </div>
                         <div class="cakewalk-footer-content">
-                            <p class="footer-des">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim adm.</p>
-                            <a href="#" class="read-more">Read more</a>
+                            <p class="footer-des"> AT TechShop chuyên cung cấp các sản phẩm công nghệ như: Laptop, Điện thoại, Máy tính bảng...</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-4">
                     <div class="single-snap-footer">
                         <div class="snap-footer-title">
-                            <h4>Information</h4>
+                            <h4>Về chúng tôi</h4>
                         </div>
                         <div class="cakewalk-footer-content">
                             <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Delivery Information</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms & Condition</a></li>
+                                <li><a href="{{route('get.about_us')}}">Giới thiệu</a></li>
+                                <li><a href="{{route('get.about_us')}}">Tuyển dụng</a></li>
+                                <li><a href="{{route('get.about_us')}}">Chính sách bảo mật</a></li>
+                                <li><a href="{{route('get.about_us')}}">Chính sách giải quyết khiếu nại</a></li>
+                                <li><a href="{{route('get.about_us')}}">Điều khoản sử dụng</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-4">
+                <div class="col-md-3 col-sm-4">
                     <div class="single-snap-footer">
                         <div class="snap-footer-title">
-                            <h4>Fashion Tags</h4>
+                            <h4>Hỗ trợ khách hàng</h4>
                         </div>
                         <div class="cakewalk-footer-content">
                             <ul>
-                                <li><a href="#">My Account</a></li>
-                                <li><a href="#">Login</a></li>
-                                <li><a href="#">My Cart</a></li>
-                                <li><a href="#">Wishlist</a></li>
-                                <li><a href="#">Checkout</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2 hidden-sm">
-                    <div class="single-snap-footer">
-                        <div class="snap-footer-title">
-                            <h4>Fashion Tags</h4>
-                        </div>
-                        <div class="cakewalk-footer-content">
-                            <ul>
-                                <li><a href="#">Sitemap</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Advanced Search</a></li>
-                                <li><a href="#">Affiliates</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="{{route('get.about_us')}}">Câu hỏi thường gặp</a></li>
+                                <li><a href="{{route('get.about_us')}}">Gửi yêu cầu hỗ trợ</a></li>
+                                <li><a href="{{route('get.about_us')}}">Hướng dẫn đặt hàng</a></li>
+                                <li><a href="{{route('get.about_us')}}">Chính sách đổi trả</a></li>
+                                <li><a href="{{route('get.about_us')}}">Phương thức vận chuyển</a></li>
                             </ul>
                         </div>
                     </div>
@@ -65,7 +48,7 @@
                 <div class="col-md-2 hidden-sm">
                     <div class="single-snap-footer">
                         <div class="snap-footer-title">
-                            <h4>Follow Us</h4>
+                            <h4>Theo dõi chúng tôi</h4>
                         </div>
                         <div class="cakewalk-footer-content social-footer">
                             <ul>
@@ -82,58 +65,58 @@
     </div>
     <!-- top footer area end -->
     <!-- info footer start -->
-{{--    <div class="info-footer">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-md-3 col-sm-4">--}}
-{{--                    <div class="info-fcontainer">--}}
-{{--                        <div class="infof-icon">--}}
-{{--                            <i class="fa fa-map-marker"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="infof-content">--}}
-{{--                            <h3>Our Address</h3>--}}
-{{--                            <p>Main Street, Banasree, Dhaka</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-3 col-sm-4">--}}
-{{--                    <div class="info-fcontainer">--}}
-{{--                        <div class="infof-icon">--}}
-{{--                            <i class="fa fa-phone"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="infof-content">--}}
-{{--                            <h3>Phone Support</h3>--}}
-{{--                            <p>+88 0173 7803547</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-3 col-sm-4">--}}
-{{--                    <div class="info-fcontainer">--}}
-{{--                        <div class="infof-icon">--}}
-{{--                            <i class="fa fa-envelope"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="infof-content">--}}
-{{--                            <h3>Email Support</h3>--}}
-{{--                            <p>admin@bootexperts.com</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-3 hidden-sm">--}}
-{{--                    <div class="info-fcontainer">--}}
-{{--                        <div class="infof-icon">--}}
-{{--                            <i class="fa fa-clock-o"></i>--}}
-{{--                        </div>--}}
-{{--                        <div class="infof-content">--}}
-{{--                            <h3>Openning Hour</h3>--}}
-{{--                            <p>Sat - Thu : 9:00 am - 22:00 pm</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    <div class="info-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-4">
+                    <div class="info-fcontainer">
+                        <div class="infof-icon">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="infof-content">
+                            <h3>Địa chỉ</h3>
+                            <p>295 Bạch mai, Hai Bà Trưng, Hà Nội</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <div class="info-fcontainer">
+                        <div class="infof-icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="infof-content">
+                            <h3>Đường dây nóng</h3>
+                            <p>+84 387 022 722</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <div class="info-fcontainer">
+                        <div class="infof-icon">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="infof-content">
+                            <h3>Email hỗ trợ</h3>
+                            <p>tat.kthc@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 hidden-sm">
+                    <div class="info-fcontainer">
+                        <div class="infof-icon">
+                            <i class="fa fa-clock-o"></i>
+                        </div>
+                        <div class="infof-content">
+                            <h3>Giờ làm việc</h3>
+                            <p>Thứ hai - Chủ nhật : 9:00 am - 22:00 pm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- info footer end -->
-    <!-- banner footer area start -->
+{{--    <!-- banner footer area start -->--}}
 {{--    <div class="banner-footer">--}}
 {{--        <div class="container-fluid">--}}
 {{--            <div class="row">--}}
@@ -182,13 +165,14 @@
 {{--            </div>--}}
 {{--        </div>--}}
 {{--    </div>--}}
-    <!-- banner footer area end -->
+{{--    <!-- banner footer area end -->--}}
+
     <!-- footer address area start -->
     <div class="address-footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-xs-12">
-                    <address>Copyright © <a href="http://bootexperts.com/">BootExperts.</a> All Rights Reserved</address>
+                    <address>Copyright © <a href="">AnhTuPT</a> All Rights Reserved</address>
                 </div>
                 <div class="col-md-6 col-xs-12">
                     <div class="footer-payment pull-right">

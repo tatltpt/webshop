@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('content')
+    <style>
+        .article_content h2{font-size: 1.4rem}
+        .article_content{font-family: Roboto,sans-serif}
+    </style>
     <div class="breadcrumbs">
         <div class="container">
             <div class="row">
@@ -11,147 +15,63 @@
                                 <span><i class="fa fa-angle-right"></i></span>
                             </li>
                             <li class="home">
-                                <a href="">{{$cateProduct->c_name}}</a>
+                                <a href="{{route('get.list.article')}}">Bài viết</a>
                                 <span><i class="fa fa-angle-right"></i></span>
                             </li>
-                            <li class="category3"><span>{{$productDetail->pro_name}}</span></li>
+                            <li class="category3"><span>{{$articleDetail->a_name}}</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="product-details-area">
+    <div class="main-contact-area">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 col-sm-5 col-xs-12">
-                    <div class="zoomWrapper">
-                        <div id="img-1" class="zoomWrapper single-zoom">
-                            <a href="#">
-                                <div style="height:374px;width:374px;" class="zoomWrapper"><img id="zoom1" src="img/product-details/big-1-1.jpg" data-zoom-image="img/product-details/ex-big-1-1.jpg" alt="big-1" style="position: absolute;"></div>
-                            </a>
+                <div class="col-sm-9">
+                   <div class="article_content" style="margin-bottom: 20px">
+                        <h1>{{$articleDetail->a_name}}</h1>
+                       <p style="font-weight: 500;color: #333">{{$articleDetail->a_description}}</p>
+                        <div>
+                            {!! $articleDetail->a_content !!}
                         </div>
-                    </div>
+                       <h4>Bài viết khác</h4>
+                       @if(isset($articles))
+                           @foreach($articles as $article)
+                               <div class="article" style="padding-bottom: 10px;margin-bottom: 10px;border-bottom: 1px solid #f2f2f2;display: flex">
+                                   <div class="article_avatar"></div>
+                                   <a href="{{route('get.detail.article',[$article->a_slug,$article->id])}}">
+                                       <img src="{{pare_url_file(($article->a_avatar))}}" style="width: 200px;height: 120px" alt="">
+                                   </a>
+                                   <div class="article_info" style="width: 80%;margin-left: 20px">
+                                       <h2 style="font-size: 14px"><a href="{{route('get.detail.article',[$article->a_slug,$article->id])}}">{{$article->a_name}}</a></h2>
+                                       <p style="font-size: 13px">{{$article->a_description}}</p>
+                                       <p>Anh Tú   <span>{{$article->created_at}}</span></p>
+                                   </div>
+                               </div>
+                           @endforeach
+                               {!! $articles->links() !!}
+                       @endif
+                   </div>
                 </div>
-                <div class="col-md-7 col-sm-7 col-xs-12">
-                    <div class="product-list-wrapper">
-                        <div class="single-product">
-                            <div class="product-content">
-                                <h2 class="product-name"><a href="#">{{$productDetail->pro_name}}</a></h2>
-                                <div class="rating-price">
-                                    <div class="pro-rating">
-                                        <a href="#"><i class="fa fa-star"></i></a>
-                                        <a href="#"><i class="fa fa-star"></i></a>
-                                        <a href="#"><i class="fa fa-star"></i></a>
-                                        <a href="#"><i class="fa fa-star"></i></a>
-                                        <a href="#"><i class="fa fa-star"></i></a>
+                <div class="col-sm-3">
+                    <h5>Bài viết nổi bật</h5>
+                    <div class="list_article_hot">
+                        @if(isset($articleHot))
+                            @foreach($articleHot as $aHot)
+                                <div class="article_hot_item">
+                                    <div class="article_img">
+                                        <a href="{{route('get.detail.article',[$aHot->a_slug,$aHot->id])}}">
+                                            <img src="{{pare_url_file($aHot->a_avatar)}}" alt="" style="max-height: 200px">
+                                        </a>
                                     </div>
-                                    <div class="price-boxes">
-                                        <span class="new-price">{{number_format($productDetail->pro_price,0,',','.')}}đ</span>
-                                    </div>
-                                </div>
-                                <div class="product-desc">
-                                    <p>{{$productDetail->pro_content}}</p>
-                                </div>
-                                <p class="availability in-stock">Availability: <span>In stock</span></p>
-                                <div class="actions-e">
-                                    <div class="action-buttons-single">
-                                        <div class="inputx-content">
-                                            <label for="qty">Quantity:</label>
-                                            <input type="text" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty">
-                                        </div>
-                                        <div class="add-to-cart">
-                                            <a href="#">Add to cart</a>
-                                        </div>
-                                        <div class="add-to-links">
-                                            <div class="add-to-wishlist">
-                                                <a href="#" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                            </div>
-                                            <div class="compare-button">
-                                                <a href="#" data-toggle="tooltip" title="" data-original-title="Compare"><i class="fa fa-refresh"></i></a>
-                                            </div>
-                                        </div>
+                                    <div class="article_info">
+                                        <h3 style="font-size: 16px;margin-top: 10px;margin-bottom: 10px">{{$aHot->a_name}}</h3>
+                                        <p>{{$aHot->a_description}}</p>
                                     </div>
                                 </div>
-                                <div class="singl-share">
-                                    <a href="#"><img src="img/single-share.png" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="single-product-tab">
-                    <!-- Nav tabs -->
-                    <ul class="details-tab">
-                        <li class="active"><a href="#home" data-toggle="tab">Description</a></li>
-                        <li class=""><a href="#messages" data-toggle="tab"> Review (1)</a></li>
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="home">
-                            <div class="product-tab-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla. Donec a neque libero. Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. </p>
-                                <p>Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus, consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in imperdiet ligula euismod eget. Nam erat mi, rutrum at sollicitudin rhoncus, ultricies posuere erat. Duis convallis, arcu nec aliquam consequat, purus felis vehicula felis, a dapibus enim lorem nec augue.</p>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="messages">
-                            <div class="single-post-comments col-md-6 col-md-offset-3">
-                                <div class="comments-area">
-                                    <h3 class="comment-reply-title">1 REVIEW FOR TURPIS VELIT ALIQUET</h3>
-                                    <div class="comments-list">
-                                        <ul>
-                                            <li>
-                                                <div class="comments-details">
-                                                    <div class="comments-list-img">
-                                                        <img src="img/user-1.jpg" alt="">
-                                                    </div>
-                                                    <div class="comments-content-wrap">
-															<span>
-																<b><a href="#">Admin - </a></b>
-																<span class="post-time">October 6, 2014 at 1:38 am</span>
-															</span>
-                                                        <p>Lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi.</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="comment-respond">
-                                    <h3 class="comment-reply-title">Add a review</h3>
-                                    <span class="email-notes">Your email address will not be published. Required fields are marked *</span>
-                                    <form action="#">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <p>Name *</p>
-                                                <input type="text">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <p>Email *</p>
-                                                <input type="email">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <p>Your Rating</p>
-                                                <div class="pro-rating">
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star"></i></a>
-                                                    <a href="#"><i class="fa fa-star-o"></i></a>
-                                                    <a href="#"><i class="fa fa-star-o"></i></a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 comment-form-comment">
-                                                <p>Your Review</p>
-                                                <textarea id="message" cols="30" rows="10"></textarea>
-                                                <input type="submit" value="Submit">
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

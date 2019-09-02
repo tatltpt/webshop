@@ -46,3 +46,9 @@
 
 
 </form>
+@section('script')
+    <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
+    <script>
+        CKEDITOR.replace('a_content');
+    </script>
+@stop

@@ -7,10 +7,10 @@
                     <div class="container-inner">
                         <ul>
                             <li class="home">
-                                <a href="index.html">Home</a>
+                                <a href="index.html">Trang chủ</a>
                                 <span><i class="fa fa-angle-right"></i></span>
                             </li>
-                            <li class="category3"><span>Contact-us</span></li>
+                            <li class="category3"><span>Liên hệ</span></li>
                         </ul>
                     </div>
                 </div>
