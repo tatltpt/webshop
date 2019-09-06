@@ -37,7 +37,7 @@ Route::prefix('admin')->middleware('CheckLoginAdmin')->group(function() {
         Route::post('/update/{id}', 'AdminProductController@update');
         Route::get('/{action}/{id}', 'AdminProductController@action')->name('admin.get.action.product');
 
-
+     //bai viet
     });
     Route::group(['prefix' => 'article'], function () {
         Route::get('/', 'AdminArticleController@index')->name('admin.get.list.article');
@@ -46,14 +46,13 @@ Route::prefix('admin')->middleware('CheckLoginAdmin')->group(function() {
         Route::get('/update/{id}', 'AdminArticleController@edit')->name('admin.get.edit.article');
         Route::post('/update/{id}', 'AdminArticleController@update');
         Route::get('/{action}/{id}', 'AdminArticleController@action')->name('admin.get.action.article');
-
-
     });
+
     // quan ly don hang
     Route::group(['prefix' => 'transaction'], function () {
         Route::get('/', 'AdminTransactionController@index')->name('admin.get.list.transaction');
         Route::get('/view/{id}', 'AdminTransactionController@viewOrder')->name('admin.get.view.order');
-
+        Route::get('/{action}/{id}', 'AdminTransactionController@action')->name('admin.get.action.transaction');
     });
     //quan ly thanh vien
     Route::group(['prefix' => 'user'], function () {
@@ -69,6 +68,7 @@ Route::prefix('admin')->middleware('CheckLoginAdmin')->group(function() {
     Route::group(['prefix' => 'contact'], function () {
         Route::get('/', 'AdminContactController@index')->name('admin.get.list.contact');
         Route::get('/update/{id}', 'AdminContactController@edit')->name('admin.get.edit.contact');
+        Route::get('/{action}/{id}', 'AdminContactController@action')->name('admin.get.action.contact');
     });
 
 });

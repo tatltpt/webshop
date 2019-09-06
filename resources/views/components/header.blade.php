@@ -193,36 +193,36 @@
                                     <a href="{{route('get.list.shopping.cart')}}"><i class="icon-bag"></i></a>
                                     <a href="{{route('get.list.shopping.cart')}}"><span class="cart-quantity">{{Cart::count()}}</span></a>
                                 </div>
-                                <div class="restrain small-cart-content">
-                                    <ul class="cart-list">
-                                        <li>
-                                            <a class="sm-cart-product" href="product-details.html">
-                                                <img src="{{asset('img/products/sm-products/cart1.jpg')}}" alt="">
-                                            </a>
-                                            <div class="small-cart-detail">
-                                                <a class="remove" href="#"><i class="fa fa-times-circle"></i></a>
-                                                <a href="#" class="edit-btn"><img src="{{asset('img/btn_edit.gif')}}" alt="Edit Button" /></a>
-                                                <a class="small-cart-name" href="product-details.html">Voluptas nulla</a>
-                                                <span class="quantitys"><strong>1</strong>x<span>$75.00</span></span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a class="sm-cart-product" href="product-details.html">
-                                                <img src="{{asset('img/products/sm-products/cart2.jpg')}}" alt="">
-                                            </a>
-                                            <div class="small-cart-detail">
-                                                <a class="remove" href="#"><i class="fa fa-times-circle"></i></a>
-                                                <a href="#" class="edit-btn"><img src="{{asset('img/btn_edit.gif')}}" alt="Edit Button" /></a>
-                                                <a class="small-cart-name" href="product-details.html">Donec ac tempus</a>
-                                                <span class="quantitys"><strong>1</strong>x<span>$75.00</span></span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <p class="total">Subtotal: <span class="amount">$155.00</span></p>
-                                    <p class="buttons">
-                                        <a href="checkout.html" class="button">Checkout</a>
-                                    </p>
-                                </div>
+{{--                                <div class="restrain small-cart-content">--}}
+{{--                                    <ul class="cart-list">--}}
+{{--                                        <li>--}}
+{{--                                            <a class="sm-cart-product" href="product-details.html">--}}
+{{--                                                <img src="{{asset('img/products/sm-products/cart1.jpg')}}" alt="">--}}
+{{--                                            </a>--}}
+{{--                                            <div class="small-cart-detail">--}}
+{{--                                                <a class="remove" href="#"><i class="fa fa-times-circle"></i></a>--}}
+{{--                                                <a href="#" class="edit-btn"><img src="{{asset('img/btn_edit.gif')}}" alt="Edit Button" /></a>--}}
+{{--                                                <a class="small-cart-name" href="product-details.html">Voluptas nulla</a>--}}
+{{--                                                <span class="quantitys"><strong>1</strong>x<span>$75.00</span></span>--}}
+{{--                                            </div>--}}
+{{--                                        </li>--}}
+{{--                                        <li>--}}
+{{--                                            <a class="sm-cart-product" href="product-details.html">--}}
+{{--                                                <img src="{{asset('img/products/sm-products/cart2.jpg')}}" alt="">--}}
+{{--                                            </a>--}}
+{{--                                            <div class="small-cart-detail">--}}
+{{--                                                <a class="remove" href="#"><i class="fa fa-times-circle"></i></a>--}}
+{{--                                                <a href="#" class="edit-btn"><img src="{{asset('img/btn_edit.gif')}}" alt="Edit Button" /></a>--}}
+{{--                                                <a class="small-cart-name" href="product-details.html">Donec ac tempus</a>--}}
+{{--                                                <span class="quantitys"><strong>1</strong>x<span>$75.00</span></span>--}}
+{{--                                            </div>--}}
+{{--                                        </li>--}}
+{{--                                    </ul>--}}
+{{--                                    <p class="total">Subtotal: <span class="amount">$155.00</span></p>--}}
+{{--                                    <p class="buttons">--}}
+{{--                                        <a href="checkout.html" class="button">Checkout</a>--}}
+{{--                                    </p>--}}
+{{--                                </div>--}}
                             </div>
                         </div>
                     </div>
@@ -233,9 +233,9 @@
                             <div class="search-icon fa fa-search"></div>
                             <div class="product-search restrain">
                                 <div class="container nopadding-right">
-                                    <form action="index.html" id="searchform" method="get">
+                                    <form action="" id="searchform" method="get">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" maxlength="128" placeholder="Search product...">
+                                            <input type="text" class="form-control" name="k" maxlength="128" placeholder="Search product...">
                                             <span class="input-group-btn">
 														<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
 													</span>

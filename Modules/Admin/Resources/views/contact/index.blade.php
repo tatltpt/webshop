@@ -36,11 +36,7 @@
                                         <td>{{$contact->c_email}}</td>
                                         <td>{{$contact->c_content}}</td>
                                         <td>
-                                            @if($contact->c_status == 1)
-                                                <a href="" class="label-success label">Đã xử lý</a>
-                                            @else
-                                                <a href="" class="label-default label">Chờ xử lý</a>
-                                            @endif
+                                            <a href="{{route('admin.get.action.contact',['active',$contact->id])}}" class="label {{$contact->getStatus($contact->c_status)['class']}}">{{$contact->getStatus($contact->c_status)['name']}}</a>
                                         </td>
 
                                         <td>

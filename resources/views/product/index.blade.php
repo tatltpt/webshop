@@ -105,6 +105,12 @@
                                             <!-- single-product start -->
                                             <div class="single-product" style="height: 550px;">
                                                 <div class="product-img" style="height: 270px;width: 240px">
+                                                    @if($product->pro_number==0)
+                                                        <span style="position: absolute;background: #e91e63;color: white;padding: 2px 6px;border-radius: 5px;font-size: 10px;">Tạm hết hàng</span>
+                                                    @endif
+                                                    @if($product->pro_sale)
+                                                        <span style="position: absolute;background-image: linear-gradient(-90deg,#ec1f1f 0%,#ff9c00 100%);border-radius: 10px;padding: 1px 7px;color: white;font-size: 10px;right: 0">{{$product->pro_sale}}%</span>
+                                                    @endif
                                                     <a href="{{route('get.detail.product',[$product->pro_slug,$product->id])}}">
                                                         <img class="primary-image" src="{{asset(pare_url_file($product->pro_avatar))}}" alt="" />
                                                         <img class="secondary-image" src="{{asset(pare_url_file($product->pro_avatar))}}" alt="" />

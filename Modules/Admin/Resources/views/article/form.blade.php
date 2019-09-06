@@ -43,7 +43,7 @@
           </div>
           <button type="submit" class="btn btn-success">Lưu thông tin</button>
       </div>
-
+  </div>
 
 </form>
 @section('script')

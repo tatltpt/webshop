@@ -49,11 +49,11 @@
                             @if ( isset($products))
                                 @foreach($products as $product)
                                     <?php
-                                        $age = 0;
-                                        if($product->pro_total_rating)
-                                            {
-                                                $age = round($product->pro_total_number / $product->pro_total_rating,2);
-                                            }
+                                    $age = 0;
+                                    if($product->pro_total_rating)
+                                    {
+                                        $age = round($product->pro_total_number / $product->pro_total_rating,2);
+                                    }
                                     ?>
                                     <tr>
                                         <td>{{$product->id}}</td>
@@ -70,6 +70,7 @@
                                                     </span>
                                                     <span>{{$age}}</span>
                                                 </li>
+                                                <li><span>Số lượng :</span><sapn>{{$product->pro_number}}</sapn></li>
                                             </ul>
                                         </td>
                                         <td>{{isset($product->category->c_name) ? $product->category->c_name : '[N\A]'}}</td>

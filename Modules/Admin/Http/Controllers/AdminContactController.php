@@ -36,10 +36,10 @@ class AdminContactController extends Controller
                     $contact->delete();
                     break;
                 case 'active':
-                    $contact->c_active = $contact->c_active ? 0 : 1;
-                    $contact->save();
+                    $contact->c_status = $contact->c_status ? 0 : 1;
                     break;
             }
+            $contact->save();
 
         }
         return redirect()->back();

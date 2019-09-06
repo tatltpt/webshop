@@ -73,11 +73,15 @@ class AdminCategoryController extends Controller
             {
                 case 'delete':
                     $category->delete();
-                    $messages = 'Xóa dữ liệu thành công.';
+
+                    break;
+                case 'active':
+                    $category->c_active = $category->c_active ? 0 : 1;
                     break;
             }
+            $category->save();
         }
-        return redirect()->back()->with('success',$messages);
+        return redirect()->back()->with('success','Thao tác thành công');
     }
 
 }

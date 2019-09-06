@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    protected $guarded = ['*'];
     protected $table = 'articles';
     const HOT = 1;
     protected $status = [

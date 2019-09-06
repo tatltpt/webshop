@@ -30,6 +30,22 @@ class AdminTransactionController extends Controller
             return \response()->json($html);
         }
     }
+    public function action(Request $request, $action, $id)
+    {
+        if ($action) {
+            $transaction = Transaction::find($id);
+            switch ($action) {
+                case 'delete':
+                    $transaction->delete();
+                    break;
+                case 'active':
+                    $transaction->tr_status = $transaction->tr_status ? 0 : 1;
+                    break;
+            }
+            $transaction->save();
 
+        }
+        return redirect()->back();
+    }
 
 }

@@ -39,7 +39,7 @@ class AdminProductController extends Controller
     public function store(RequestProduct $requestProduct)
     {
         $this->insertOrUpdate($requestProduct);
-        return redirect()->back();
+        return redirect()->back()->with('success','Thêm mới thành công');
     }
     public function edit($id)
     {
@@ -50,7 +50,7 @@ class AdminProductController extends Controller
     public function update(RequestProduct $requestProduct,$id)
     {
         $this->insertOrUpdate($requestProduct,$id);
-        return redirect()->back();
+        return redirect()->back()->with('success','Cập nhật thành công');
     }
     public function getCategories()
     {
@@ -65,9 +65,10 @@ class AdminProductController extends Controller
       $product->pro_category_id = $requestProduct->pro_category_id;
       $product->pro_price = $requestProduct->pro_price;
       $product->pro_sale = $requestProduct->pro_sale;
+      $product->pro_number = $requestProduct->pro_number;
       $product->pro_description = $requestProduct->pro_description;
-        $product->pro_content = $requestProduct->pro_content;
-        $product->pro_title_seo = $requestProduct->pro_title_seo ? $requestProduct->pro_title_seo : $requestProduct->pro_name;
+      $product->pro_content = $requestProduct->pro_content;
+      $product->pro_title_seo = $requestProduct->pro_title_seo ? $requestProduct->pro_title_seo : $requestProduct->pro_name;
       $product->pro_description_seo = $requestProduct->pro_description_seo ? $requestProduct->pro_description_seo : $requestProduct->pro_description_seo;
       if ($requestProduct->hasFile('avatar')){
           $file = upload_image('avatar');

@@ -31,11 +31,7 @@
                         <td>{{$transaction->tr_phone}}</td>
                         <td>{{number_format($transaction->tr_total,0,',','.')}} VNĐ</td>
                         <td>
-                            @if($transaction->tr_status == 1)
-                                <a href="" class="label-success label">Đã xử lý</a>
-                            @else
-                                <a href="" class="label-default label">Chờ xử lý</a>
-                            @endif
+                            <a href="{{route('admin.get.action.transaction',['active',$transaction->id])}}" class="label {{$transaction->getStatus($transaction->tr_status)['class']}}">{{$transaction->getStatus($transaction->tr_status)['name']}}</a>
                         </td>
                         <td>
                             <a style="padding: 5px 10px;border: 1px solid #999;font-size: 12px" class="btn_customer_action" href=""><i class="far fa-trash-alt" style="font-size: 11px"></i> Xóa</a>
